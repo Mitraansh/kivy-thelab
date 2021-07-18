@@ -12,12 +12,18 @@ WidgetsExample:
         # text: "Click here"
         text: "Count"
         on_press: root.on_button_click()
+        #disabled: True
+        disabled: not root.count_enabled
     Label:
         font_name: "fonts/Lcd.ttf"
         font_size: "80dp"
         color: 1,2,0,1
         # text:"Hello"
         text: root.my_text
+    Switch:
+        on_active: root.on_switch_active(self)
+        size_hint: None, 1
+        width: "100dp"
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
