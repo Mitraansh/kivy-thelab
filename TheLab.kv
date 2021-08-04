@@ -47,7 +47,16 @@ WidgetsExample:
         #color: 1,2,0,1
         #text: root.slider_value_text
         #text:str(int(my_slider.value))
-
+    TextInput:
+        id: my_text_input
+        size_hint:None,1
+        width: "100dp"
+        text: "foo"
+        multiline: False
+        on_text_validate: root.on_text_validate(self)
+    Label:
+        #text: my_text_input.text
+        text: "Your name is " +root.text_input_str
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
