@@ -21,9 +21,26 @@ WidgetsExample:
         # text:"Hello"
         text: root.my_text
     Switch:
+        id: my_switch
         on_active: root.on_switch_active(self)
         size_hint: None, 1
         width: "100dp"
+        active:True
+    Slider:
+        id: my_slider
+        min: 0
+        max: 100
+        value:50
+        #on_value:root.on_slider_value(self)
+        disabled: not my_switch.active
+        orientation:"vertical"
+    Label:
+        font_name: "fonts/Lcd.ttf"
+        font_size: "80dp"
+        color: 1,2,0,1
+        #text: root.slider_value_text
+        text:str(int(my_slider.value))
+
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
